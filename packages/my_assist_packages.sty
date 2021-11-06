@@ -1,0 +1,50 @@
+%========= my_header.sty =============
+\ProvidesPackage{my_assist_packages}[04.04.2021 v0.1a Mein Hilfspackete NIK0L4I]
+	
+%\usepackage{ucs}   \usepackage[utf8]{inputenc}
+\usepackage{graphicx}          
+% mit \usepackage[dvips]{graphicx} der dvips-Treiber für EPS-Grafiken geladen werden
+%\usepackage{multicol}         
+%\usepackage{float}             
+\usepackage{amsmath}           
+\usepackage{amsfonts}   
+\usepackage{amssymb}
+                  
+\usepackage{tabularx} 
+                               
+\usepackage{listings}          %Paket um Quellcode darzustellen
+\usepackage{lastpage}          
+
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{forest}
+\usetikzlibrary{arrows}
+
+\usepackage{adjustbox}
+
+% Linienabstand
+\usepackage{setspace}
+\onehalfspacing	      %1.5 Zeilenabstand; 1 = \singlespacing; 2 = \doublespacing
+
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+
+% New Commands
+%
+
+
+
+
+
+
+\newcommand{\TreeAA}{%
+child {
+	%     
+    node [black,label=90:\framebox{$x,y$},label=-45:]{3,1}
+edge from parent node[left,draw=none] {}
+}
+}
+
+%=======================================================================
+\endinput

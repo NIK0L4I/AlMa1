@@ -1,0 +1,28 @@
+\pagestyle{empty}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-4.4901866041623455,
+xmax=6.241873926919578,
+ymin=-0.6672327872706693,
+ymax=5.402992854091992,
+xtick={-4,-3.5,...,6},
+ytick={-0.5,0,...,5},]
+\clip(-4.4901866041623455,-0.6672327872706693) rectangle (6.241873926919578,5.402992854091992);
+\draw [line width=2pt,domain=-4.4901866041623455:6.241873926919578] plot(\x,{(-0.5-0*\x)/2});
+\draw [samples=50,rotate around={0:(0,0)},xshift=0cm,yshift=0cm,line width=2pt,domain=-4:4)] plot (\x,{(\x)^2/2/0.5});
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-4.4901866041623455:6.241873926919578] plot(\x,{(\x)^(2)});
+\begin{scriptsize}
+\draw [fill=xdxdff] (0,0.25) circle (2.5pt);
+\draw[color=xdxdff] (0.04864472646141368,0.38137255401842274) node {$C$};
+\draw[color=black] (-4.434835002569373,-0.1290922162278801) node {$f$};
+\draw[color=black] (-0.8554314328904734,1.0763426629079675) node {$c$};
+\draw[color=qqwuqq] (-2.245371650669565,5.375317053295506) node {$g$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
