@@ -2,8 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import dijkstra as djk
-
+from queue import PriorityQueue 
 # (a)
 res_path = os.getcwd() + '/08_blatt/programm/ressources'
 
@@ -53,13 +52,31 @@ def initAdjazenz():
         adjazenzMatrix[edges[0][i]][edges[1][i]] = np.sqrt((x1-x2)**2 + (y1-y2)**2)
     print(adjazenzMatrix[12][1364])
 
-#def dijkstra(src):
-#    costs = [[np.inf for x in range(n)] for y in range(n)]
-#    costs[0][src] = 0
-#    for i in range(n):
-#        costs[i][src] = adjazenzMatrix[i][src]
+def dijkstra(src):
+    visited = []
+    costs = {v: float('inf') for v in range(n)}
+    costs[src] = 0
+    
+    pq = PriorityQueue()
+    pq.put((0, src))
+
+    while not pq.empty():
+        (dist, current) = pq.get()
+        visited.append(current)
+
+        for neigbor in range(n):
+            if adjazenzMatrix[current][neigbor] != 0:
+                distance = adjazenzMatrix[current][neigbor]
+
+                if neigbor not in visited:
+                    old_cost = costs[neigbor]
+                    new_cost = costs[current] + distance
+                    if new_cost < old_cost:
+                        pq.put((new_cost, neigbor))
+                        costs[neigbor] = new_cost
+    return costs
 
 if __name__ == '__main__':
     #plotData()
     initAdjazenz()
-    djk.dijkstra(adjazenzMatrix, 1758)
+    print(dijkstra(1758)[585])
