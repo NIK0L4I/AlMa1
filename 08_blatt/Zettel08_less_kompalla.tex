@@ -1,0 +1,104 @@
+%======================== PAGE STYLE / LAYOUT ====================%
+
+\documentclass[a4paper,oneside,11pt]{scrartcl}
+\usepackage[textwidth=17cm,top=1.5cm,bottom=2.5cm,includehead]{geometry}
+\setlength{\textheight}{635pt}
+\setlength{\parindent}{0mm} % no paragraph indentation
+\setlength{\headsep}{2.5cm}
+
+%============================ PACKAGES ==============================%
+
+\usepackage[T1]{fontenc}        %Umlaute, Sonderzeichen...
+\usepackage[utf8]{inputenc}		%Dateicodierung: Unter Linux utf8                                
+\usepackage[ngerman]{babel}     %Trennungen, Schriftsatz; Neue deutsche Rechtschreibung
+\usepackage[german]{layout}
+
+%========================  STUDENT COMMANDS  ======================%
+%% Hier können Sie Ihre eigene LaTeX kommandos hinzufügen. %%
+
+%\usepackage{../packages/analysis1_bonn_mathdefs}
+\usepackage{../packages/my_header}
+\usepackage{../packages/my_assist_packages}
+\usepackage{../packages/my_geogebra}
+\usepackage{gauss}
+\usepackage{pdfpages}
+
+%======================== PYTHON =================================%
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+
+% ===================== Header_Footer ==============================%
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\LectureTitle \\ \Semester \\ \LectureType \ (\TutorName)}
+\chead{8. Abgabe \\ \today \\}
+\rhead{\AuthorOneName \ (\AuthorOneID) \\
+\AuthorTwoName \ (\AuthorTwoID) \\ }
+%\lfoot{\footnotesize{\AuthorOneName - Matr.: \AuthorOneMatr}}
+\cfoot{- \thepage \ -}
+
+%====================================================================%
+    
+%======================= BEGIN DOCUMENT =============================%
+\begin{document}
+%\layout
+
+%============ HEADING ===============%
+\begin{center}
+{\Large{\textbf{Aufgaben für Algorithmische Mathematik 1}}} \\
+\end{center}
+%====================================%
+\begin{minipage}[t]{\textwidth}
+\includegraphics[scale = 0.75, page=1]{AlMa_Zettel08.pdf}
+\end{minipage}
+\pagebreak
+\begin{minipage}[t]{\textwidth}
+\includegraphics[scale = 0.75, page=2]{AlMa_Zettel08.pdf}
+\end{minipage}
+\pagebreak
+\begin{minipage}[t]{\textwidth}
+\includegraphics[scale = 0.75, page=3]{AlMa_Zettel08.pdf}
+\end{minipage}
+\pagebreak
+\begin{minipage}[t]{\textwidth}
+\includegraphics[scale = 0.75, page=4]{AlMa_Zettel08.pdf}
+\end{minipage}
+\pagebreak
+\begin{minipage}[t]{\textwidth}
+\includegraphics[scale = 0.75, page=5]{AlMa_Zettel08.pdf}
+\end{minipage}
+\end{document}
+%===================================== END DOCUMENT ====================================%

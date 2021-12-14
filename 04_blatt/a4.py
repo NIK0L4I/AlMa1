@@ -18,7 +18,7 @@ def bubbleSort(arr):
 
 def main():
     time = []
-    for k in range(1,9):
+    for k in range(1,2):
         arr1 = np.random.randint(100, size=10**k)   # Lege zufälliges Array der größe 10^k an mit Werten aus {0,...,99}
         t1 = timeit.timeit(lambda: bubbleSort(arr1), number=1)  # Misst die Zeit, die BubbleSort für das sortieren eines Arrays der größe 10^k benötigt
         time.append(t1)
@@ -51,6 +51,6 @@ def plot_time(xscale_value):
     plt.show()
 
 if __name__ == '__main__':
-    #main()
-    plot_time(10)
+    main()
+    #plot_time(10)
 # %%
